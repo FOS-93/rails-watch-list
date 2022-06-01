@@ -1,0 +1,13 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.card-img-height {
+  height: 280px !important;
+}

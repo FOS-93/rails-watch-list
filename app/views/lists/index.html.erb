@@ -1,0 +1,21 @@
+<div class="home-banner">
+  <h1>Le Wagon</h1>
+</div>
+
+<div class="container">
+  <h1>Mis Listas <%= link_to 'New', new_list_path, class:"btn btn-primary" %></h1>
+  <div class="card-grid">
+    <% @lists.each do |list| %>
+      <div class="card">
+        <%= image_tag list&.picture, class:"card-img-top card-img-height" %>
+        <div class="card-body">
+          <h3 class="card-title"><%= list.name %></h3>
+          <p class="card-text"><%= list.created_at %></p>
+          <%= link_to 'More Info', list, class: "btn btn-primary"%>
+          <%= link_to 'Edit', list, class: "btn btn-secondary"%>
+          <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
