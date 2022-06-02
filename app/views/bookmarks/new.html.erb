@@ -1,16 +1,19 @@
-<h1>Agregar un Bookmark a la lista <%= @list.name %></h1>
 
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-  <ul>
-    <% if @bookmark.errors.any?%>
-      <% @bookmark.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
+<div class="container">
+  <h1>Agregar un Bookmark a la lista <%= @list.name %></h1>
+
+  <%= simple_form_for [ @list, @bookmark ] do |f| %>
+    <ul>
+      <% if @bookmark.errors.any?%>
+        <% @bookmark.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-  <%= f.input :comment, label: "Tu pequeño comentario" %>
-  <%= f.association :movie, label: "Selecciona la Película" %>
-  <%= f.submit "Submit bookmark", class: "btn btn-primary" %>
-<% end %>
-<br>
-<%= link_to 'Back', lists_path, class:"btn btn-dark" %>
+    </ul>
+    <%= f.input :comment, label: "Tu pequeño comentario" %>
+    <%= f.association :movie, label: "Selecciona la Película" %>
+    <%= f.submit "Submit bookmark", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to 'Back', lists_path, class:"btn btn-dark" %>
+</div>
