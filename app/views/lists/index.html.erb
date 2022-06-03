@@ -7,7 +7,7 @@
   <div class="card-grid">
     <% @lists.each do |list| %>
       <div class="card">
-        <%= image_tag list&.picture, class:"card-img-top card-img-height" %>
+        <%= cl_image_tag list.photo.key, crop: :fill, class:"card-img-top" %>
         <div class="card-body">
           <h3 class="card-title"><%= list.name %></h3>
           <p class="card-text"><%= list.created_at %></p>
